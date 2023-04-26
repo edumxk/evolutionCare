@@ -10,6 +10,10 @@
 <div class="container-fluid bg-dark">
     <x-header></x-header>
 </div>
+<div class="container vw-100 p-5">
+    <button class="btn btn-success">Bootstrap ON</button>
+</div>
+
 <script src="./main.js"></script>
 </body>
 </html>
