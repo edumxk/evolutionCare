@@ -32,7 +32,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/formulario',[FormularioController::class, 'index'])
     ->middleware(['auth', 'verified']);
 
-Route::post('formulario', [FormularioController::class, 'store']);
+Route::post('formulario', [FormularioController::class, 'store'])->name('formulario.store')
+    ->middleware(['auth', 'verified']);
 
 
 require __DIR__.'/auth.php';

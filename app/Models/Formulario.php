@@ -13,6 +13,7 @@ class Formulario extends Model
         'paciente',
         'enfermeiro',
         'tecnico',
+        'medico',
         'evolucao',
     ];
 }

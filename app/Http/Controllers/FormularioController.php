@@ -23,14 +23,13 @@ class FormularioController extends Controller
     {
         $formulario = new Formulario();
 
-        dd($request->all());
-        $formulario->medico = $request->medico;
-        $formulario->paciente = $request->paciente;
-        $formulario->enfermeiro = $request->enfermeiro;
-        $formulario->tecnico = $request->tecnico;
-        $formulario->evolucao = $request->evolucao;
-
-        $formulario->save();
+        $formulario = Formulario::create([
+            'medico' => $request->medico,
+            'paciente' => $request->paciente,
+            'enfermeiro' => $request->enfermeiro,
+            'tecnico' => $request->tecnico,
+            'evolucao' => $request->evolucao,
+        ]);
 
         return redirect('/dashboard')->with('status', 'Formulário enviado com sucesso!');
     }

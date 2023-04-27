@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\FormularioRule;
 
 class FormularioStoreRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class FormularioStoreRequest extends FormRequest
             'paciente' => 'required',
             'enfermeiro' => 'required',
             'tecnico' => 'required',
-            'evolucao' => 'required',
+            'evolucao' => ['required',new FormularioRule],
             'medico' => 'required'
         ];
     }
